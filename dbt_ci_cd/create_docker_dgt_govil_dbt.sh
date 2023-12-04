@@ -38,7 +38,7 @@ cd $DiretoryRepo/dbt/
 # git get version #
 cd /home/$userName/projects/$DiretoryRepo
 export TagVersion=$(git describe --tags --abbrev=0)
-echo 
+ 
 echo $TagVersion
 
 # get name dbt project
@@ -107,6 +107,9 @@ echo Path: "$PWD"
 # Docker #
 docker images
 # docker build
+echo change path for build docker: cd /home/$userName/projects/$DiretoryRepo
+echo "$pwd"
+cd /home/$userName/projects/$DiretoryRepo/
 docker build . -f ./dbt/Dockerfile -t $ArtifactRegistry/$ProjectNameGCP/$ArtifactRegistryRepo/$DbtProjectName:latest
 echo docker build success from git repo: $DiretoryRepo
 docker images
