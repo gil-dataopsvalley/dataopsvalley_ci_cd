@@ -14,9 +14,8 @@ export userName=$(gcloud config list account --format "value(core.account)")
 export userName=$(cut -d "@" -f1 <<< "$userName")
 echo "the user name exec is: "$userName
 
-
 #create folder projects in terminal if not exsit
-mkdir -p projects
+mkdir -p /home/$userName/projects/
 cd /home/$userName/projects/
 
 # Check the $DiretoryRepo is exists and delete Directory
@@ -34,6 +33,7 @@ export GitUser=gil-dataopsvalley
 # git - clone
 git clone https://$GitDomain/$GitUser/$DiretoryRepo.git
 echo "clone success - https://$GitDomain/$GitUser/$DiretoryRepo.git"
+echo Path git clone: "$PWD"
 cd $DiretoryRepo/dbt/
 # git get version #
 cd /home/$userName/projects/$DiretoryRepo
