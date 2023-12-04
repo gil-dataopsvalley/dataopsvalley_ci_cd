@@ -42,8 +42,9 @@ echo
 echo $TagVersion
 
 # get name dbt project
+cd /home/$userName/projects/$DiretoryRepo/dbt/
 export DbtProjectName=$(ls -d * | head -1)
-
+echo create docker for $DbtProjectName
 # get name composer name #
 # export test_composer_environmentName=composer-dgt-gcp-egov-test-govilbi-2 #compserName not exist
 # export prod_composer_environmentName=composer-dgt-gcp-egov-prod-govilbi-2 #compserName not exist
@@ -54,7 +55,7 @@ export DbtProjectName=$(ls -d * | head -1)
 # export Dag_DBT_Name=dgt_airflow_k8_dbt.py
 
 
-echo create docker for $DbtProjectName
+
 echo "creator: Gil Kal"
 
 echo $ProjectNameGCP
